@@ -1,0 +1,9 @@
+zalenium:
+  image: dosel/zalenium:3.8.1b
+  command: start
+  volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/tmp/videos:/home/seluser/videos"
+  ports:
+      - "4444:4444"
+  privileged: true

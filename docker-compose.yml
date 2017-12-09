@@ -1,0 +1,10 @@
+selenium-hub:
+  image: selenium/hub:3.8.1
+  ports:
+    - "4444:4444"
+chrome:
+  image: selenium/node-chrome-debug:3.8.1
+  links:
+    - selenium-hub:hub
+  ports: # if you scale this container, please comment out this section
+    - "5900:5900" #enable VNC, connect to `vnc://localhost:5900`(password:secret)
